@@ -62,13 +62,13 @@ AggMask*_R101_FPN -mask-grid | aggmask_star_r101_fpn_halve_maskgrid.py
     python -m torch.distributed.launch --nproc_per_node=${GPU_NUM} --master_port=$((RANDOM + 10000)) tools/train.py ${CONFIG_FILE} --launcher pytorch
 
     Example (8 gpus): 
-    python -m torch.distributed.launch --nproc_per_node=8 --master_port=$((RANDOM + 10000)) tools/train.py ./configs/aggmask/aggmask_r101_fpn_8gpu_halve_maskgrid.py --launcher pytorch
+    python -m torch.distributed.launch --nproc_per_node=8 --master_port=$((RANDOM + 10000)) tools/train.py ./configs/aggmask/aggmask_r101_fpn_halve_maskgrid.py --launcher pytorch
 
 ## Evaluation on COCO minival and LVIS val:
     python tools/test_ins.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --show --out  ${OUTPUT_FILE} --eval segm
     
     Example: 
-    python tools/test_ins.py ./configs/aggmask/aggmask_r101_fpn_8gpu_halve_maskgrid.py ./aggmask_r101_fpn_8gpu_halve_maskgrid.pth --show --out aggmask_r101_fpn_8gpu_halve_maskgrid.pkl --eval segm
+    python tools/test_ins.py ./configs/aggmask/aggmask_r101_fpn_halve_maskgrid.py ./aggmask_r101_fpn_halve_maskgrid.pth --show --out aggmask_r101_fpn_halve_maskgrid.pkl --eval segm
 
 > two consecutive evaluation will be performed on COCO minival set ( with COCO api) and 80 COCO category subset of LVIS val set (with LVIS api).
 
@@ -85,7 +85,7 @@ and generate the segmentation json file by:
     python tools/test_ins.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --show --out  ${OUTPUT_FILE} --eval segm
     
     Example: 
-    python tools/test_ins.py ./configs/aggmask/aggmask_r101_fpn_8gpu_halve_maskgrid.py ./aggmask_r101_fpn_8gpu_halve_maskgrid.pth --show --out aggmask_r101_fpn_8gpu_halve_maskgrid.pkl --eval segm
+    python tools/test_ins.py ./configs/aggmask/aggmask_r101_fpn_halve_maskgrid.py ./aggmask_r101_fpn_halve_maskgrid.pth --show --out aggmask_r101_fpn_halve_maskgrid.pkl --eval segm
 Then zip the `.pkl.segm.json` to `.pkl.segm.json.zip` and upload to [CodaLab](https://competitions.codalab.org/competitions/20796)
 
 
@@ -115,5 +115,5 @@ AggMask*_R101_FPN +cls-grid  | 40.5 | [Googledrive](https://drive.google.com/fil
     python tools/test_ins_vis.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --show --save_dir  ${SAVE_DIR}
     
     Example: 
-    python tools/test_ins_vis.py ./configs/aggmask/aggmask_r101_fpn_8gpu_halve_maskgrid.py  aggmask_r101_fpn_8gpu_halve_maskgrid.pth --show --save_dir work_dirs/aggmask_r101_fpn_8gpu_halve_maskgrid
+    python tools/test_ins_vis.py ./configs/aggmask/aggmask_r101_fpn_halve_maskgrid.py  aggmask_r101_fpn_halve_maskgrid.pth --show --save_dir work_dirs/aggmask_r101_fpn_halve_maskgrid
 > images with visualized instance segmentation mask will be under save_dir
