@@ -1,9 +1,11 @@
 
 # AggMask: Aggregating Neighboring Mask Representations for High Quality Instance Segmentation. 
 
-This is an anonymous repository containing the code of the NeurIPS submission (ID: 209): 
+This is an anonymous repository containing the instructions and pretrained model of the NeurIPS submission (ID: 209): 
 
 AggMask: Aggregating Neighboring Mask Representations for High Quality Instance Segmentation. 
+
+Code is in the uploaded supplementary file.
 
 ## Installation 
 This code is based on 
