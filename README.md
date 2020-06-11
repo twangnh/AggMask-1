@@ -108,7 +108,7 @@ Model | AP (COCO test-dev) | Link
 AggMask_R101_FPN +cls-grid   | 39.3 | [Googledrive](https://drive.google.com/file/d/1dI1sGpIBGX-to35xU9HMTzEcU3Jda0S5/view?usp=sharing)
 AggMask*_R101_FPN +cls-grid  | 40.5 | [Googledrive](https://drive.google.com/file/d/1HX9K5_iOJVFE_tcvStKI0cUM7ty9Z805/view?usp=sharing)
 
-> please use aggmask_r101_fpn_increasing_clsgrid.py and aggmask_star_r101_fpn_increasing_clsgrid_more-60-50-36-16-12.py for the test-dev model, correspondingly
+> please use aggmask_r101_fpn_increasing_clsgrid.py and aggmask_star_r101_fpn_increasing_clsgrid_more-60-50-36-16-12.py for the two test-dev models, respectively
 
 ## Visualization of instance segmentation result
     
